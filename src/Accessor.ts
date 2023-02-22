@@ -17,7 +17,9 @@ export const Accessor = <T>(value: T, actions?: IAccessorArgs<T> | INAccessorArg
 	const o: IAccessor<T> = {
 		value,
 		onChange: (callback: (value: T) => unknown) => listeners.push(callback),
-		removeListener: () => undefined
+		removeListener: () => {
+			throw Error('Not implemented');
+		}
 	};
 
 	let { get: _get, set: _set } = actions ?? {};
