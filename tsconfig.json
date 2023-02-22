@@ -1,0 +1,20 @@
+{
+	"compilerOptions": {
+		"module": "ESNext",
+		"target": "ES2021",
+		"lib": [
+			"ESNext",
+			"DOM"
+		],
+		"strict": true,
+		"removeComments": true,
+		"preserveConstEnums": true,
+		"sourceMap": true,
+		"moduleResolution": "classic",
+		"esModuleInterop": true,
+		"outDir": "dist",
+		"declaration": true,
+		"skipLibCheck": true
+	},
+	"include": ["src/*.ts"]
+}

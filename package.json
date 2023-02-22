@@ -1,0 +1,27 @@
+{
+	"name": "@foresteam/proactive",
+	"type": "module",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"version": "1.0.0",
+	"description": "A frontend library, similar to React (though was intended to be more like Vue)",
+	"scripts": {
+		"prepublish": "tsc"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Foresteam/libproactive.git"
+	},
+	"author": "Foresteam",
+	"license": "MIT",
+	"homepage": "https://github.com/Foresteam/FWGUI#readme",
+	"dependencies": {
+		"blueimp-md5": "^2.19.0",
+		"uuid": "^9.0.0"
+	},
+	"devDependencies": {
+		"@types/blueimp-md5": "^2.18.0",
+		"@types/uuid": "^9.0.1",
+		"typescript": "^4.9.5"
+	}
+}
