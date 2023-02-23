@@ -10,18 +10,17 @@ import { observingCallbacks } from './Observer.js';
 /** Applies the scope to last stylesheet loaded */
 export const applyScope = (styles: string, scope: string): void => {
 	const style = document.createElement('style');
-	const sts = styles.split('\n');
+	// apply the scope
+	const sts = styles.replaceAll('__vscope', scope).split('\n');
+	console.log(sts);
 	for (const l in sts) {
 		const s = sts[l];
-		if (s.indexOf('{') < 0) {
-			// replace css var-funcs
-			for (let [match] of [...s.matchAll(/vcss\(.*?\)/g)]) {
-				match = match.replaceAll('\'', '');
-				sts[l] = sts[l].replace(match, `var(--${CSS_VAR_PREFIX}${match.substring(5, match.length - 1)})`);
-			}
-			continue;
+		// replace css var-funcs
+		console.log(s.matchAll(/vcss\(.*?\)/g));
+		for (let [match] of [...s.matchAll(/vcss\(.*?\)/g)]) {
+			match = match.replaceAll('\'', '');
+			sts[l] = sts[l].replace(match, `var(--${CSS_VAR_PREFIX}${match.substring(5, match.length - 1)})`);
 		}
-		sts[l] = s.replaceAll('__vscope', scope);
 	}
 	const css = sts.join('\n');
 	for (const existing of Array.from(document.getElementsByTagName('style')))

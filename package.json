@@ -3,7 +3,7 @@
 	"type": "module",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
-	"version": "0.0.2",
+	"version": "0.1.0",
 	"description": "A frontend library, similar to React (though was intended to be more like Vue)",
 	"scripts": {
 		"prepublish": "tsc"
